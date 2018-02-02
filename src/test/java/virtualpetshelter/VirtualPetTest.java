@@ -74,7 +74,6 @@ public class VirtualPetTest {
 		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION);
 		String petName = underTest.petName();
 		assertEquals(PET_NAME, petName);
-
 	}
 
 	@Test
@@ -82,6 +81,13 @@ public class VirtualPetTest {
 		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION);
 		String petDescription = underTest.petDescription();
 		assertEquals(PET_DESCRIPTION, petDescription);
-
+	}
+	
+	@Test
+	public void feedShouldDecreaseHungerLevel() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
+		underTest.feedPet();
+		int hungerLevel = underTest.getHunger();
+		assertEquals(-1, hungerLevel);
 	}
 }

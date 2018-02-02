@@ -46,4 +46,8 @@ public class VirtualPet {
 	public String petDescription() {
 		return petDescription;
 	}
+
+	public void feedPet() {
+		hungerLevel -= 1;
+	}
 }
