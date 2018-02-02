@@ -2,12 +2,14 @@ package virtualpetshelter;
 
 public class VirtualPet {
 
+	private String petDescription;
 	private String petName;
 	private int thirstLevel;
 	private int hungerLevel;
 	private int happinessLevel;
 
 	public VirtualPet(String petName, String petDescription, int hungerLevel, int happinessLevel, int thirstLevel) {
+		this.petDescription = petDescription;
 		this.petName = petName;
 		this.hungerLevel = hungerLevel;
 		this.happinessLevel = happinessLevel;
@@ -26,14 +28,17 @@ public class VirtualPet {
 		return thirstLevel;
 	}
 
+	public String petName() {
+		return petName;
+	}
+
 	public void tick() {
 		thirstLevel += 1;
 		hungerLevel += 1;
 		happinessLevel += 1;
 	}
 
-	public String petName() {
-		return petName;
+	public String petDescription() {
+		return petDescription;
 	}
-
 }
