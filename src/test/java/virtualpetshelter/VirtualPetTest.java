@@ -61,11 +61,27 @@ public class VirtualPetTest {
 		String petName = underTest.petName();
 		assertEquals(PET_NAME, petName);
 	}
-	
+
 	@Test
 	public void shouldHavePetDescription() {
 		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
 		String petDescription = underTest.petDescription();
 		assertEquals(PET_DESCRIPTION, petDescription);
+	}
+
+	@Test
+	public void shouldHaveConstructorWithPetNameAndDescriptionOnly() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION);
+		String petName = underTest.petName();
+		assertEquals(PET_NAME, petName);
+
+	}
+
+	@Test
+	public void shouldHaveConstructorWithPetNameAndDescription() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION);
+		String petDescription = underTest.petDescription();
+		assertEquals(PET_DESCRIPTION, petDescription);
+
 	}
 }

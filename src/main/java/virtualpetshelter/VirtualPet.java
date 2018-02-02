@@ -16,6 +16,11 @@ public class VirtualPet {
 		this.thirstLevel = thirstLevel;
 	}
 
+	public VirtualPet(String petName, String petDescription) {
+		this.petName = petName;
+		this.petDescription = petDescription;
+	}
+
 	public int getHunger() {
 		return hungerLevel;
 	}
