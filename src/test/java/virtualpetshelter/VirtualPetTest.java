@@ -36,7 +36,7 @@ public class VirtualPetTest {
 	@Test
 	public void shouldHaveVariedHappinessLevel() {
 		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 10, 0);
-		int happinessLevel = underTest.getHappiness();
+		int happinessLevel = underTest.getBoredom();
 		assertEquals(10, happinessLevel);
 	}
 
@@ -82,12 +82,28 @@ public class VirtualPetTest {
 		String petDescription = underTest.petDescription();
 		assertEquals(PET_DESCRIPTION, petDescription);
 	}
-	
+
 	@Test
-	public void feedShouldDecreaseHungerLevel() {
+	public void feedPetShouldDecreaseHungerLevel() {
 		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
 		underTest.feedPet();
 		int hungerLevel = underTest.getHunger();
 		assertEquals(-1, hungerLevel);
+	}
+
+	@Test
+	public void waterPetShouldDecreaseThirstLevel() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
+		underTest.waterPet();
+		int thirstLevel = underTest.getThirst();
+		assertEquals(-1, thirstLevel);
+	}
+	
+	@Test
+	public void playWithPetShouldDecreaseBoredomeLevel() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
+		underTest.playWithPet();
+		int boredomLevel = underTest.getBoredom();
+		assertEquals(-1, boredomLevel);
 	}
 }
