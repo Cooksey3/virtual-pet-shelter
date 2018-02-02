@@ -55,4 +55,11 @@ public class VirtualPetTest {
 		assertEquals(1, thirstLevel);
 	}
 	
+	@Test
+	public void shouldHavePetName() {
+		underTest = new VirtualPet(PET_NAME, PET_DESCRIPTION, 0, 0, 0);
+		String petName = underTest.petName();
+		assertEquals(PET_NAME, petName);
+	}
+	
 }
